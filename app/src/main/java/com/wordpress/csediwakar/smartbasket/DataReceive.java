@@ -47,8 +47,13 @@ public class DataReceive extends AppCompatActivity {
     Thread time;
     BufferedInputStream bis = null;
     String ans="";
-    String name ="Jacket-1";
-    String name1="Jacket-2";
+    String name0 ="Jacket";
+    String name1="Britanica Buiscuits";
+    String name2="Parle-G";
+    String name3="Axe Deo";
+    String name4="T-Shirt";
+    String name5="T-Shirt";
+
 
     String s1="";
     ArrayList<String> singleAddress = new ArrayList<String>();
@@ -145,15 +150,36 @@ public class DataReceive extends AppCompatActivity {
                                         singleAddress.add(str+ "\n");
                                     }*/
                                     String s=str;
-                                    if(s.equals("54BD465"))
+                                    if(s.equals("06F89B02"))
                                     {
                                         //String name ="Jacket-1";
-                                        singleAddress.add(name);
+                                        singleAddress.add(name0);
                                     }
-                                    if(s.equals("F89B2"))
+                                    if(s.equals("CC9CAA19"))
                                     {
                                         //String name1="Jacket-2";
                                         singleAddress.add(name1);
+                                    }
+                                    if(s.equals("FC0AAB19"))
+                                    {
+                                        //String name ="Jacket-1";
+                                        singleAddress.add(name2);
+                                    }
+                                    if(s.equals("7C1D9219"))
+                                    {
+                                        //String name ="Jacket-1";
+                                        singleAddress.add(name3);
+                                    }
+                                    if(s.equals("5C509119"))
+                                    {
+                                        //String name ="Jacket-1";
+                                        singleAddress.add(name4);
+                                    }
+
+                                    if(s.equals("7CE39119"))
+                                    {
+                                        //String name ="Jacket-1";
+                                        singleAddress.add(name5);
                                     }
 
 
@@ -195,7 +221,7 @@ public class DataReceive extends AppCompatActivity {
                 System.out.println(Collections.frequency(singleAddress,"54BD465"));
             }
             //
-            totalcost.setText("Total Money=" +(Collections.frequency(singleAddress,name)*key + Collections.frequency(singleAddress,name1)*card));
+            totalcost.setText("Total Money=" +(Collections.frequency(singleAddress,name0)*key + Collections.frequency(singleAddress,name1)*card));
 
         }
     }
