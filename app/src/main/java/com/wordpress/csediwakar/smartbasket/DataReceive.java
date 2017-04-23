@@ -33,7 +33,7 @@ import java.util.Iterator;
 
 public class DataReceive extends AppCompatActivity {
 
-    private final String DEVICE_ADDRESS = "98:D3:32:70:9D:EC";
+    private final String DEVICE_ADDRESS = "98:B3:37:00:B1:44";
     private final UUID PORT_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");//Serial Port Service ID
     boolean stopThread;
     byte buffer[];
