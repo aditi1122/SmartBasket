@@ -10,8 +10,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.wordpress.csediwakar.smartbasket.PaymentGateway">
     <TextView
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Payment Made from Pune to Mumbai"/>
+        android:text="Thanks For Shopping"
+        android:textSize="40dp"
+        android:gravity="center"
+        android:textColor="@android:color/holo_blue_dark"/>
+
 
 </RelativeLayout>

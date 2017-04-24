@@ -37,7 +37,8 @@
         android:layout_below="@id/totalc"/>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sp1">
         <ListView
             android:id="@+id/lst"
             android:layout_width="match_parent"

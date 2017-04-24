@@ -33,7 +33,7 @@ import java.util.Iterator;
 
 public class DataReceive extends AppCompatActivity {
 
-    private final String DEVICE_ADDRESS = "98:B3:37:00:B1:44";
+    private final String DEVICE_ADDRESS = "98:D3:37:00:B1:44";
     private final UUID PORT_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");//Serial Port Service ID
     boolean stopThread;
     byte buffer[];
@@ -47,12 +47,12 @@ public class DataReceive extends AppCompatActivity {
     Thread time;
     BufferedInputStream bis = null;
     String ans="";
-    String name0 ="Jacket";
-    String name1="Britanica Buiscuits";
-    String name2="Parle-G";
-    String name3="Axe Deo";
-    String name4="T-Shirt";
-    String name5="T-Shirt";
+    String name0 ="Jacket Guccy";
+    String name1="T-Shirt Armani";
+    String name2="Pant Peter-England";
+    String name3="Coat Raymond";
+    String name4="T-Shirt Nike";
+    String name5="T-Shirt Adidas";
 
 
     String s1="";
@@ -84,7 +84,8 @@ public class DataReceive extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        if (BTinit()) {
+        if (BTinit())
+        {
             if (BTconnect()) {
                 //setUiEnabled(true);
                 deviceConnected = true;
@@ -134,7 +135,7 @@ public class DataReceive extends AppCompatActivity {
                                 public void run()
                                 {
 
-                                    t1.append(str +"\n");
+
                                 /*    Enumeration e = table.keys();
                                     if(singleAddress.contains(str))
                                     {
@@ -150,36 +151,55 @@ public class DataReceive extends AppCompatActivity {
                                         singleAddress.add(str+ "\n");
                                     }*/
                                     String s=str;
-                                    if(s.equals("06F89B02"))
+                                    System.out.println("----------------------------------");
+                                    System.out.println(s);
+                                    System.out.println("00000000000000000000000000000000000");
+                                    if(s.equals("F89B2"))
                                     {
                                         //String name ="Jacket-1";
+                                        t1.append(name0+"\n");
                                         singleAddress.add(name0);
+                                        Toast.makeText(DataReceive.this, "You have bought "+name0, Toast.LENGTH_SHORT).show();
                                     }
-                                    if(s.equals("CC9CAA19"))
-                                    {
+                                    if(s.equals("C9CAA19"))
+                                    {   t1.append(name1+"\n");
                                         //String name1="Jacket-2";
                                         singleAddress.add(name1);
+                                        Toast.makeText(DataReceive.this, "You have bought "+name1, Toast.LENGTH_SHORT).show();
+
                                     }
-                                    if(s.equals("FC0AAB19"))
+                                    if(s.equals("CAAB19"))
                                     {
+                                        t1.append(name2+"\n");
                                         //String name ="Jacket-1";
                                         singleAddress.add(name2);
+                                        Toast.makeText(DataReceive.this, "You have bought "+name2, Toast.LENGTH_SHORT).show();
+
                                     }
-                                    if(s.equals("7C1D9219"))
+                                    if(s.equals("C1D9219"))
                                     {
+                                        t1.append(name3+"\n");
                                         //String name ="Jacket-1";
                                         singleAddress.add(name3);
+                                        Toast.makeText(DataReceive.this, "You have bought "+name3, Toast.LENGTH_SHORT).show();
+
                                     }
-                                    if(s.equals("5C509119"))
+                                    if(s.equals("C509119"))
                                     {
+                                        t1.append(name4+"\n");
                                         //String name ="Jacket-1";
                                         singleAddress.add(name4);
+                                        Toast.makeText(DataReceive.this, "You have bought "+name4, Toast.LENGTH_SHORT).show();
+
                                     }
 
-                                    if(s.equals("7CE39119"))
+                                    if(s.equals("CE39119"))
                                     {
+                                        t1.append(name5+"\n");
                                         //String name ="Jacket-1";
                                         singleAddress.add(name5);
+                                        Toast.makeText(DataReceive.this, "You have bought "+name5, Toast.LENGTH_SHORT).show();
+
                                     }
 
 
@@ -206,8 +226,13 @@ public class DataReceive extends AppCompatActivity {
     public void test()
     {
         Iterator it=singleAddress.iterator();
-        int key=100;
-        int card=20;
+
+        int jack=3000;
+        int t1=1000;
+        int pant=1500;
+        int coat=3500;
+        int t2=1200;
+        int t3=700;
         //Iterator it=singleAddress.iterator();
         //listAdapter = new ArrayAdapter<String>(this,R.layout.simplerow,singleAddress);
         while(it.hasNext())
@@ -221,7 +246,12 @@ public class DataReceive extends AppCompatActivity {
                 System.out.println(Collections.frequency(singleAddress,"54BD465"));
             }
             //
-            totalcost.setText("Total Money=" +(Collections.frequency(singleAddress,name0)*key + Collections.frequency(singleAddress,name1)*card));
+            totalcost.setText("Total Money=" +(Collections.frequency(singleAddress,name0)*jack +
+                    Collections.frequency(singleAddress,name1)*t1
+                    +Collections.frequency(singleAddress,name2)*pant
+                    +Collections.frequency(singleAddress,name3)*coat
+                    +Collections.frequency(singleAddress,name4)*t2
+                    +Collections.frequency(singleAddress,name5)*t3));
 
         }
     }
